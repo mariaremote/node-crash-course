@@ -1,4 +1,4 @@
-# Project Name: Node Crash Course
+# Node Crash Course - Blog
 
 ## Description
 
