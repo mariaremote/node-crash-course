@@ -1,3 +1,4 @@
 /node_modules
 /nvidia
 package-lock.json
+secrets.js

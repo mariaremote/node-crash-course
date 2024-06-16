@@ -60,7 +60,39 @@ h3 {
 
 /* index styles */
 
+.single {
+  margin-bottom: 1.5rem;
+  display: block;
+  padding-left: 1.2rem;
+  border-left: 6px solid rgb(68, 88, 43);
+}
+
+.single:hover h3 {
+  color: rgb(68, 120, 5);
+}
+
+.timestamp {
+  color: #777;
+  font-size: 0.8em;
+}
+
 /* details styles */
+.details {
+  position: relative;
+}
+.delete {
+  background-color: rgb(146, 158, 129);
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 20%;
+  padding: 2%;
+}
+
+.delete:hover {
+  box-shadow: 8px 12px 8px rgba(0, 0, 0, 0.2);
+}
 
 /* create styles */
 .create-blog form {

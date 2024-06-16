@@ -11,10 +11,18 @@
         <hr />
 
         <% if (blogs.length > 0) { %> <% blogs.forEach(blog => { %>
-        <h3 class="title"><%= blog.title %></h3>
-        <p class="body"><%= blog.body %></p>
+        <div class="single">
+          <a href="/post/<%= blog._id %>">
+            <h3 class="title"><%= blog.title %></h3>
+            <p class="body"><%= blog.body %></p>
+            <p class="timestamp">
+              posted on: <%= blog.date.toLocaleString("en-DE",{ day: "2-digit",
+              month: "long", year: "numeric"}) %>
+            </p>
+          </a>
+        </div>
         <% }) %> <% } else {%>
-        <p>No blogs to display</p>
+        <p>No posts to display</p>
         <% }%>
       </section>
     </main>

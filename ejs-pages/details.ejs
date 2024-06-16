@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./templates/head.ejs') %>
+
+  <body>
+    <%- include('./templates/nav.ejs') %>
+    <main>
+      <div class="details content">
+        <h3 class="title"><%= post.title %></h3>
+        <div class="content">
+          <p class="body"><%= post.body %></p>
+        </div>
+        <p class="timestamp">posted on: <%= formattedDate %></p>
+        <a class="delete" data-doc="<%= post._id %>" href="/"
+          ><img src="/icons8-trash.svg" alt="delete-icon"
+        /></a>
+      </div>
+    </main>
+    <%- include('./templates/footer.ejs') %>
+    <script>
+      const deleteBtn = document.querySelector(".delete");
+      deleteBtn.addEventListener("click", (event) => {
+        const endpoint = `/delete/${deleteBtn.dataset.doc}`;
+        fetch(endpoint, {
+          method: "DELETE",
+        });
+        // .then((jsonResponse) => {
+        //   jsonResponse.json();
+        // })
+        // .then((jsObject) => {
+        //   console.log(jsObject);
+        //   window.location.href = jsObject.redirect;
+        // })
+        // .catch((err) => console.error("error in FE:\n", err));
+      });
+    </script>
+  </body>
+</html>
